@@ -5,11 +5,16 @@ const keyboardLayout = keyboard.getLayoutMap();
 document.getElementById('keyboard-value').innerText = JSON.stringify(keyboard);
 document.getElementById('keyboardLayout-value').innerText = JSON.stringify(keyboardLayout);
 
-addEventListener("keydown", (event) => { })
+addEventListener("keydown", onkeydown);
 
 onkeydown = (event) => { 
-   document.getElementById('keyLastPressed-value').innertText = JSON.stringify(event.key);
+   document.getElementById('keyLastPressed-value').innerText = JSON.stringify(event.key);
 }
+
+
+input.addEventListener("keypress", (event) => {
+     document.getElementById('keyLastPressed-value').innerText = JSON.stringify(event.code)
+} );
 </script>
 
 <dl>
