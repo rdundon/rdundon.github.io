@@ -1,32 +1,10 @@
 <script type="text/javascript">
-
-if (navigator.keyboard !== 'undefined') {
-const keyboard = navigator.keyboard;
-const keyboardLayout = keyboard.getLayoutMap();
-
-document.getElementById('keyboard-value').innerText = JSON.stringify(keyboard);
-document.getElementById('keyboardLayout-value').innerText = JSON.stringify(keyboardLayout);
-
-addEventListener("keydown", onkeydown);
-
-onkeydown = (event) => { 
-   document.getElementById('keyLastPressed-value').innerText = JSON.stringify(event.key);
-}
-}
-
 input.addEventListener("keypress", (event) => {
      document.getElementById('keyLastPressed-value').innerText = JSON.stringify(event.code)
 } );
 </script>
 
 <dl>
-<dt>keyboard</dt>
-<dd id="keyboard-value"></dd>
-
-
-<dt>keyboardLayout</dt>
-<dd id="keyboardLayout-value"></dd>
-
 <dt>Key Last Pressed</dt>
 <dd id="keyLastPressed-value"></dd>
 </div>
