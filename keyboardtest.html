@@ -1,4 +1,6 @@
 <script type="text/javascript">
+
+if (navigator.keyboard !== 'undefined') {
 const keyboard = navigator.keyboard;
 const keyboardLayout = keyboard.getLayoutMap();
 
@@ -10,7 +12,7 @@ addEventListener("keydown", onkeydown);
 onkeydown = (event) => { 
    document.getElementById('keyLastPressed-value').innerText = JSON.stringify(event.key);
 }
-
+}
 
 input.addEventListener("keypress", (event) => {
      document.getElementById('keyLastPressed-value').innerText = JSON.stringify(event.code)
